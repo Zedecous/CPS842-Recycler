@@ -39,9 +39,7 @@ public class WordListAdapter extends
         Recipes mCurrent = mWordList.get(position);
         holder.txtName.setText(mCurrent.name );
         holder.txtDescription.setText(mCurrent.description);
-        holder.txtIngredients.setText(mCurrent.ingredients);
-        holder.txtDirections.setText(mCurrent.directions);
-        holder.imgRecipe.setImageBitmap(mCurrent.image);
+
     }
 
     @Override
@@ -51,26 +49,26 @@ public class WordListAdapter extends
     class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public final TextView txtName;
         public final TextView txtDescription;
-        public final TextView txtIngredients;
-        public final TextView txtDirections;
-        public final ImageView imgRecipe;
+//        public final TextView txtIngredients;
+//        public final TextView txtDirections;
+//        public final ImageView imgRecipe;
         final WordListAdapter mAdapter;
 
         public WordViewHolder(View itemView, WordListAdapter adapter) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtTitle);
             txtDescription = itemView.findViewById(R.id.txtDescription);
-            txtIngredients = itemView.findViewById(R.id.txtIngredients);
-            txtDirections = itemView.findViewById(R.id.txtDirections);
-            imgRecipe = itemView.findViewById(R.id.imgRecipe);
+//            txtIngredients = itemView.findViewById(R.id.txtIngredients);
+//            txtDirections = itemView.findViewById(R.id.txtDirections);
+//            imgRecipe = itemView.findViewById(R.id.imgRecipe);
             this.mAdapter = adapter;
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            Context context = v.getContext();
-            Intent intent = new Intent(context,recipe.class);
+            //Context context = v.getContext();
+            //Intent intent = new Intent(context,recipe.class);
         }
     }
 }
