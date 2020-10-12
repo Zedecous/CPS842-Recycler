@@ -119,7 +119,7 @@ public class RecipeListActivity extends AppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mdNameView.setText(mValues.get(position).name);
             holder.mDescriptionView.setText(mValues.get(position).description);
-            
+
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);
