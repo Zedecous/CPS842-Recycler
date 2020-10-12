@@ -12,4 +12,5 @@
     <string name="todo">TODO</string>
     <string name="title_recipe_list">Recipes</string>
     <string name="title_recipe_detail">Recipe Detail</string>
+    <string name="recipes">Recipes</string>
 </resources>

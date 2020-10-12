@@ -8,6 +8,14 @@
     android:orientation="vertical"
     tools:context=".Splash">
 
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/recipes"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
