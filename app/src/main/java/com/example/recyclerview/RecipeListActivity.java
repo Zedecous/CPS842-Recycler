@@ -76,15 +76,15 @@ public class RecipeListActivity extends AppCompatActivity {
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
         private final RecipeListActivity mParentActivity;
-        private final List<RecipeContent.DummyItem> mValues;
+        private final List<RecipeContent.RecipeList> mValues;
         private final boolean mTwoPane;
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RecipeContent.DummyItem item = (RecipeContent.DummyItem) view.getTag();
+                RecipeContent.RecipeList item = (RecipeContent.RecipeList) view.getTag();
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
-                    arguments.putString(RecipeDetailFragment.ARG_ITEM_ID, item.id);
+                    arguments.putString(RecipeDetailFragment.ARG_ITEM_ID, item.name);
                     RecipeDetailFragment fragment = new RecipeDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
@@ -93,7 +93,7 @@ public class RecipeListActivity extends AppCompatActivity {
                 } else {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, RecipeDetailActivity.class);
-                    intent.putExtra(RecipeDetailFragment.ARG_ITEM_ID, item.id);
+                    intent.putExtra(RecipeDetailFragment.ARG_ITEM_ID, item.name);
 
                     context.startActivity(intent);
                 }
@@ -101,7 +101,7 @@ public class RecipeListActivity extends AppCompatActivity {
         };
 
         SimpleItemRecyclerViewAdapter(RecipeListActivity parent,
-                                      List<RecipeContent.DummyItem> items,
+                                      List<RecipeContent.RecipeList> items,
                                       boolean twoPane) {
             mValues = items;
             mParentActivity = parent;
@@ -117,8 +117,9 @@ public class RecipeListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+            holder.mdNameView.setText(mValues.get(position).name);
+            holder.mDescriptionView.setText(mValues.get(position).description);
+            
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);
@@ -130,13 +131,17 @@ public class RecipeListActivity extends AppCompatActivity {
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
-            final TextView mIdView;
-            final TextView mContentView;
+            final TextView mdNameView;
+            final TextView mDescriptionView;
+            final TextView mIngredientsView;
+            final TextView mDirectionsView;
 
             ViewHolder(View view) {
                 super(view);
-                mIdView = (TextView) view.findViewById(R.id.id_text);
-                mContentView = (TextView) view.findViewById(R.id.content);
+                mdNameView = (TextView) view.findViewById(R.id.txtName);
+                mDescriptionView = (TextView) view.findViewById(R.id.txtDescription);
+                mIngredientsView = (TextView) view.findViewById(R.id.txtIngredients);
+                mDirectionsView = (TextView) view.findViewById(R.id.txtDirections);
             }
         }
     }

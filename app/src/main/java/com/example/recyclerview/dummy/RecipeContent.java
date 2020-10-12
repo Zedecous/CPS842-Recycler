@@ -35,7 +35,16 @@ public class RecipeContent {
                 "https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/06/moist-chocolate-cupcakes-5-600x900.jpg",
                 "Flour \n Sugar \n Chocolate",
                 "Mix and bake"));
-
+        addItem(new RecipeList("Egg Salad",
+                "A wonderful-tasting egg salad sandwich that you will definitely devour. It's really good on rye.",
+                "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F344163.jpg&w=327&h=327&c=sc&poi=face&q=85",
+                "8 large eggs \n 1/2 cup mayonnaise \n 1 teaspoon prepared yellow mustard \n 1/4 cup chopped green onion \n salt and pepper \n 1/4 teaspoon paprika",
+                "Place egg in a saucepan and cover with cold water. Bring water to a boil and immediately remove from heat. Cover and let eggs stand in hot water for 10 to 12 minutes."));
+        addItem(new RecipeList("Chocolate Cupcakes",
+                "super moist chocolate cupcakes pack TONS of chocolate flavor in each cupcake wrapper",
+                "https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/06/moist-chocolate-cupcakes-5-600x900.jpg",
+                "Flour \n Sugar \n Chocolate",
+                "Mix and bake"));
     }
     private static void addItem(RecipeList item) {
         ITEMS.add(item);
